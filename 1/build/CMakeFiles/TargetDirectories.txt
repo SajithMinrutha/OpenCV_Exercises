@@ -1,0 +1,4 @@
+/Users/minrutha/Documents/Gemini/computerVision/exercises/1/build/CMakeFiles/hello_opencv.dir
+/Users/minrutha/Documents/Gemini/computerVision/exercises/1/build/CMakeFiles/video_read.dir
+/Users/minrutha/Documents/Gemini/computerVision/exercises/1/build/CMakeFiles/edit_cache.dir
+/Users/minrutha/Documents/Gemini/computerVision/exercises/1/build/CMakeFiles/rebuild_cache.dir

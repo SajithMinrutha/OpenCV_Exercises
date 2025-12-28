@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/Users/minrutha/Documents/Gemini/computerVision/exercises/1/build",
+  "command": "/usr/bin/c++  -isystem /opt/homebrew/Cellar/opencv/4.12.0_19/include/opencv4  -arch arm64 -o CMakeFiles/hello_opencv.dir/hello_opencv.cpp.o -c /Users/minrutha/Documents/Gemini/computerVision/exercises/1/hello_opencv.cpp",
+  "file": "/Users/minrutha/Documents/Gemini/computerVision/exercises/1/hello_opencv.cpp",
+  "output": "CMakeFiles/hello_opencv.dir/hello_opencv.cpp.o"
+},
+{
+  "directory": "/Users/minrutha/Documents/Gemini/computerVision/exercises/1/build",
+  "command": "/usr/bin/c++  -isystem /opt/homebrew/Cellar/opencv/4.12.0_19/include/opencv4  -arch arm64 -o CMakeFiles/video_read.dir/video_read.cpp.o -c /Users/minrutha/Documents/Gemini/computerVision/exercises/1/video_read.cpp",
+  "file": "/Users/minrutha/Documents/Gemini/computerVision/exercises/1/video_read.cpp",
+  "output": "CMakeFiles/video_read.dir/video_read.cpp.o"
+}
+]
