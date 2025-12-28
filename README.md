@@ -1,61 +1,72 @@
-# OpenCV — My Exercises
+# OpenCV — C++ Exercises
 
-This repository contains personal OpenCV exercises and experiments.
+This repository contains personal OpenCV exercises written in C++.
 
 ## Overview
 
-A collection of small scripts and notebooks to practice computer vision techniques using OpenCV, NumPy, and Matplotlib.
+Small C++ programs demonstrating common computer-vision techniques using OpenCV and CMake for builds.
 
-## Prerequisites
+## Prerequisites (macOS)
 
-- Python 3.8+
-- pip
-
-## Setup
-
-1. Create and activate a virtual environment:
-
-   ```bash
-   python -m venv venv
-   source venv/bin/activate
-   ```
-
-2. Install dependencies (if `requirements.txt` is present):
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-   Or install the basics:
-
-   ```bash
-   pip install opencv-python numpy matplotlib
-   ```
-
-## Running exercises
-
-Run any Python script from the repository root, for example:
+- Homebrew
+- A modern C++ compiler (`clang++` or `g++`) supporting C++17
+- `cmake` and `pkg-config`
+- OpenCV 4.x (install via Homebrew):
 
 ```bash
-python path/to/exercise_script.py
+brew install opencv cmake pkg-config
 ```
 
-Jupyter notebooks can be opened with:
+Make sure Homebrew's OpenCV is discoverable by CMake (Homebrew typically links OpenCV to `/usr/local` or `/opt/homebrew`).
+
+## Build with CMake
+
+1. From the repository root create and enter a build directory:
 
 ```bash
-jupyter lab
+mkdir -p build && cd build
+cmake ..
+cmake --build . --config Release
 ```
 
-## Repository structure
+2. To run the example:
 
-- `exercises/` — your OpenCV scripts and notebooks
-- `data/` — sample images and assets (if present)
-- `.gitignore` — ignored files
+```bash
+./example path/to/image.jpg
+```
 
-## Contributing
+## Minimal `CMakeLists.txt`
 
-Add new exercises as separate scripts or notebooks. Name files with a clear prefix (e.g., `01_basic_filters.py`).
+Use this `CMakeLists.txt` at the repository root to build `example.cpp`:
 
-## Notes
+```cmake
+cmake_minimum_required(VERSION 3.10)
+project(opencv_exercises LANGUAGES CXX)
+find_package(OpenCV REQUIRED)
+add_executable(example example.cpp)
+target_compile_features(example PRIVATE cxx_std_17)
+target_link_libraries(example PRIVATE ${OpenCV_LIBS})
+```
 
-This README is a minimal starting point. Tell me if you want examples added, a `requirements.txt`, or instructions tailored to specific scripts.
+## Quick compile (no CMake)
+
+Compile directly using `pkg-config`:
+
+```bash
+clang++ -std=c++17 `pkg-config --cflags opencv4` example.cpp -o example `pkg-config --libs opencv4`
+./example path/to/image.jpg
+```
+
+## Example usage
+
+- `example.cpp` loads an image, converts it to grayscale, shows it, and writes `output.png` in the current directory.
+
+## Repository layout
+
+- `example.cpp` — minimal C++ exercise program
+- `CMakeLists.txt` — build file
+- `data/` — add images here for exercises (optional)
+
+## Next steps
+
+Tell me if you want additional examples (filters, edge detection, feature matching), a CI workflow, or automated build scripts.
