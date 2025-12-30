@@ -9,6 +9,7 @@ int main()
     if (image.empty())
     {
         std::cerr << "Failed To Load The Image" << std::endl;
+        return 1;
     }
 
     // cropping
@@ -31,6 +32,18 @@ int main()
     cv::imshow("Cropped Image", cropped_image);
     cv::imshow("Resized Image", resized_image);
     cv::imshow("Rotated Image", rotated_image);
+
+    cv::Mat blurred_image;
+    cv::GaussianBlur(image, blurred_image, cv::Size(5, 5), 0);
+    cv::imshow("Blurred Image (Gaussian)", blurred_image);
+
+    cv::Mat sharpened_image;
+    cv::Mat kernel = (cv::Mat_<float>(3, 3) << 0, -1, 0,
+                      -1, 5, -1,
+                      0, -1, 0);
+
+    cv::filter2D(image, sharpened_image, -1, kernel);
+    cv::imshow("Sharpened Image", sharpened_image);
 
     cv::waitKey(0);
     cv::destroyAllWindows();

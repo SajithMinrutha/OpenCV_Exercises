@@ -1,3 +1,4 @@
 {
-  "cmake.sourceDirectory": "/Users/minrutha/Documents/Gemini/computerVision/exercises/1"
+  "cmake.sourceDirectory": "/Users/minrutha/Documents/Gemini/computerVision/exercises/1",
+  "C_Cpp.default.compilerPath": "/usr/bin/clang++"
 }

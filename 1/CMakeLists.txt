@@ -12,3 +12,6 @@ target_link_libraries(video_read ${OpenCV_LIBS})
 
 add_executable(editing_image editing_image.cpp)
 target_link_libraries(editing_image ${OpenCV_LIBS})
+
+add_executable(drawing drawing.cpp)
+target_link_libraries(drawing ${OpenCV_LIBS})
